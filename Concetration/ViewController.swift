@@ -36,7 +36,8 @@ class ViewController: UIViewController {
     }
     
     
-    func updateViewFromModel (){
+    func updateViewFromModel () {
+        
         for index in cardButtons.indices{
             let card = game.cards[index]
             let button = cardButtons[index]
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     
     func emoji (for card: Card) -> String {
         if emojiChoice.count > 0, emoji[card.identifier] == nil {

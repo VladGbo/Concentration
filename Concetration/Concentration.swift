@@ -13,6 +13,7 @@ class Concentration
     
     var indexOfOneAndOnlyFaceUpCard: Int?
     
+    
     func chooseCard (index: Int) {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
@@ -38,5 +39,33 @@ class Concentration
             let card = Card()
             cards += [card, card]
         }
+        self.cards = shuffleTheCards(for: cards)
+    }
+    
+    
+    func shuffleTheCards ( for cards: [Card]) -> [Card] {
+        var shuffleCards = cards
+        var newArr = [Card]()
+        for _ in cards.indices{
+            newArr.append(shuffleCards.remove(at: Int(arc4random_uniform(UInt32(shuffleCards.count)))))
+        }
+        return newArr
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
