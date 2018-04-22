@@ -17,7 +17,7 @@ class Concentration
     func chooseCard (index: Int) {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
-                if cards[matchIndex].identifier == cards[index].identifier{
+                if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
@@ -35,7 +35,7 @@ class Concentration
     
     
     init(numberOfPairsOfCard: Int) {
-        for _ in 1...numberOfPairsOfCard{
+        for _ in 1...numberOfPairsOfCard {
             let card = Card()
             cards += [card, card]
         }
@@ -50,6 +50,14 @@ class Concentration
             newArr.append(shuffleCards.remove(at: Int(arc4random_uniform(UInt32(shuffleCards.count)))))
         }
         return newArr
+    }
+    
+    func resetGame () {
+        for card in cards.indices {
+            cards[card].isMatched = false
+            cards[card].isFaceUp = false
+        }
+        self.cards = shuffleTheCards(for: cards)
     }
 }
 

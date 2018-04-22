@@ -16,7 +16,16 @@ class ViewController: UIViewController {
     
     lazy var game = Concentration(numberOfPairsOfCard: (cardButtons.count + 1) / 2)
     
-    var emojiChoice = ["👻", "🎃", "🐛", "🦑", "☃️", "🕷", "🦇", "🐺", "🐍"]
+    let emojiThemes = [["😀", "🤯", "😱", "🤪", "😇", "🤩", "🤬", "😘", "🤓"],
+                       ["😈", "👹", "👺", "👻", "☠️", "💀","👽", "👾", "🎃"],
+                       ["🤲", "👐", "👊", "🤟", "🖖", "🤙","👌", "🤞", "👇"],
+                       ["💂‍♀️", "👩‍🌾", "👮‍♂️", "👨‍🚒", "🎅", "👩‍✈️","👨‍🎤", "🧝‍♂️", "🧙‍♀️"],
+                       ["🦑", "🐙", "🦐", "🦀", "🐡", "🐠","🐟", "🐬", "🐳"],
+                       ["🐝", "🐛", "🦋", "🐌", "🐜", "🐞","🦗", "🕷", "🦂"]]
+    
+    lazy var themeEmoji = Theme(themesOfGame: emojiThemes)
+    
+    lazy var emojiChoice = themeEmoji.randomEmoji()
     
     var emoji = [Int: String]()
     
@@ -25,7 +34,7 @@ class ViewController: UIViewController {
             flipCountLabel.text! = "Flips: \(flipCount)"
         }
     }
-    
+        
 
     @IBAction func touchButton(_ sender: UIButton){
         if let cardNumber = cardButtons.index(of: sender){
@@ -34,7 +43,6 @@ class ViewController: UIViewController {
         }
         flipCount += 1
     }
-    
     
     func updateViewFromModel () {
         
@@ -60,5 +68,16 @@ class ViewController: UIViewController {
         }
         return emoji[card.identifier] ?? "?"
     }
+    
+    @IBAction func newGameConcentration(_ sender: UIButton){
+        game.resetGame()
+        flipCount = 0
+        self.emojiChoice.removeAll()
+        self.emoji.removeAll()
+        self.emojiChoice = themeEmoji.randomEmoji()
+        updateViewFromModel()
+        print(emojiChoice)
+    }
+
 }
 

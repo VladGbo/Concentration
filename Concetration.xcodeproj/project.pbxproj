@@ -15,6 +15,7 @@
 		9018938F207E41EC00A04952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9018938D207E41EC00A04952 /* LaunchScreen.storyboard */; };
 		9018939A207E41EC00A04952 /* ConcetrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90189399207E41EC00A04952 /* ConcetrationTests.swift */; };
 		901893A5207E41EC00A04952 /* ConcetrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901893A4207E41EC00A04952 /* ConcetrationUITests.swift */; };
+		9032B257208B56DD0045BB24 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032B256208B56DD0045BB24 /* Theme.swift */; };
 		90863465208120C4003DCD7B /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90863464208120C4003DCD7B /* Concentration.swift */; };
 		908634672082574F003DCD7B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908634662082574F003DCD7B /* Card.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		901893A0207E41EC00A04952 /* ConcetrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConcetrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		901893A4207E41EC00A04952 /* ConcetrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcetrationUITests.swift; sourceTree = "<group>"; };
 		901893A6207E41EC00A04952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9032B256208B56DD0045BB24 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		90863464208120C4003DCD7B /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		908634662082574F003DCD7B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 			children = (
 				901893B2207E474D00A04952 /* Supporting Files */,
 				90189383207E41EA00A04952 /* ViewController.swift */,
+				9032B256208B56DD0045BB24 /* Theme.swift */,
 				90863464208120C4003DCD7B /* Concentration.swift */,
 				908634662082574F003DCD7B /* Card.swift */,
 				90189385207E41EA00A04952 /* Main.storyboard */,
@@ -276,6 +279,7 @@
 				90189384207E41EA00A04952 /* ViewController.swift in Sources */,
 				90863465208120C4003DCD7B /* Concentration.swift in Sources */,
 				908634672082574F003DCD7B /* Card.swift in Sources */,
+				9032B257208B56DD0045BB24 /* Theme.swift in Sources */,
 				9018938A207E41EA00A04952 /* Concetration.xcdatamodeld in Sources */,
 				90189382207E41EA00A04952 /* AppDelegate.swift in Sources */,
 			);
