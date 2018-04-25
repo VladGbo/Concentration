@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]!
     
+    @IBOutlet weak var gameScore: UILabel!
+    
     lazy var game = Concentration(numberOfPairsOfCard: (cardButtons.count + 1) / 2)
     
     let emojiThemes = [["😀", "🤯", "😱", "🤪", "😇", "🤩", "🤬", "😘", "🤓"],
@@ -42,6 +44,7 @@ class ViewController: UIViewController {
             updateViewFromModel()
         }
         flipCount += 1
+        gameScore.text = "Score: \(game.score)"
     }
     
     func updateViewFromModel () {
@@ -72,6 +75,8 @@ class ViewController: UIViewController {
     @IBAction func newGameConcentration(_ sender: UIButton){
         game.resetGame()
         flipCount = 0
+        game.score = 0
+        gameScore.text = "Score: 0"
         self.emojiChoice.removeAll()
         self.emoji.removeAll()
         self.emojiChoice = themeEmoji.randomEmoji()

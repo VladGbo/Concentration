@@ -11,15 +11,30 @@ class Concentration
 {
     var cards = [Card]()
     
+    let getPoints = Score()
+    
     var indexOfOneAndOnlyFaceUpCard: Int?
     
+    var wasPickedCards = [Int]()
+    
+    var score = 0
     
     func chooseCard (index: Int) {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[matchIndex].identifier == cards[index].identifier {
+                    wasPickedCards.append(index)
+                    score += getPoints.addPoint
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                } else {
+                    if !isAppendUsedIndexCard(for: index){
+                        if score < 1{
+                            score = 0
+                        } else {
+                        score -= getPoints.pointPenalty
+                        }
+                    }
                 }
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = nil
@@ -59,21 +74,22 @@ class Concentration
         }
         self.cards = shuffleTheCards(for: cards)
     }
+    
+    
+    func isAppendUsedIndexCard(for cardIndex: Int) -> Bool{
+        if wasPickedCards.isEmpty{
+            wasPickedCards.append(cardIndex)
+            return true
+        } else {
+            for index in wasPickedCards.indices {
+                if wasPickedCards[index] == cardIndex{
+                    return false
+                } else {
+                    continue
+                }
+            }
+            wasPickedCards.append(cardIndex)
+            return true
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

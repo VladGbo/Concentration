@@ -16,6 +16,7 @@
 		9018939A207E41EC00A04952 /* ConcetrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90189399207E41EC00A04952 /* ConcetrationTests.swift */; };
 		901893A5207E41EC00A04952 /* ConcetrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901893A4207E41EC00A04952 /* ConcetrationUITests.swift */; };
 		9032B257208B56DD0045BB24 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032B256208B56DD0045BB24 /* Theme.swift */; };
+		90552C88208F92BC00B67ACE /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90552C87208F92BC00B67ACE /* Score.swift */; };
 		90863465208120C4003DCD7B /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90863464208120C4003DCD7B /* Concentration.swift */; };
 		908634672082574F003DCD7B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908634662082574F003DCD7B /* Card.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		901893A4207E41EC00A04952 /* ConcetrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcetrationUITests.swift; sourceTree = "<group>"; };
 		901893A6207E41EC00A04952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9032B256208B56DD0045BB24 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		90552C87208F92BC00B67ACE /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		90863464208120C4003DCD7B /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		908634662082574F003DCD7B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				90189383207E41EA00A04952 /* ViewController.swift */,
 				9032B256208B56DD0045BB24 /* Theme.swift */,
 				90863464208120C4003DCD7B /* Concentration.swift */,
+				90552C87208F92BC00B67ACE /* Score.swift */,
 				908634662082574F003DCD7B /* Card.swift */,
 				90189385207E41EA00A04952 /* Main.storyboard */,
 				90189390207E41EC00A04952 /* Info.plist */,
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90552C88208F92BC00B67ACE /* Score.swift in Sources */,
 				90189384207E41EA00A04952 /* ViewController.swift in Sources */,
 				90863465208120C4003DCD7B /* Concentration.swift in Sources */,
 				908634672082574F003DCD7B /* Card.swift in Sources */,
