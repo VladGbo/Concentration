@@ -19,8 +19,11 @@ class Concentration
     
     var score = 0
     
+    var flipCount = 0
+    
     func chooseCard (index: Int) {
         if !cards[index].isMatched {
+            flipCount += 1
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[matchIndex].identifier == cards[index].identifier {
                     wasPickedCards.append(index)
@@ -73,6 +76,8 @@ class Concentration
             cards[card].isFaceUp = false
         }
         self.cards = shuffleTheCards(for: cards)
+        self.score = 0
+        self.flipCount = 0
     }
     
     

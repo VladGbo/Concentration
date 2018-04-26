@@ -30,12 +30,6 @@ class ViewController: UIViewController {
     lazy var emojiChoice = themeEmoji.randomEmoji()
     
     var emoji = [Int: String]()
-    
-    var flipCount = 0 {
-        didSet{
-            flipCountLabel.text! = "Flips: \(flipCount)"
-        }
-    }
         
 
     @IBAction func touchButton(_ sender: UIButton){
@@ -43,7 +37,7 @@ class ViewController: UIViewController {
             game.chooseCard(index: cardNumber)
             updateViewFromModel()
         }
-        flipCount += 1
+        flipCountLabel.text = "Flips: \(game.flipCount)"
         gameScore.text = "Score: \(game.score)"
     }
     
@@ -74,8 +68,7 @@ class ViewController: UIViewController {
     
     @IBAction func newGameConcentration(_ sender: UIButton){
         game.resetGame()
-        flipCount = 0
-        game.score = 0
+        flipCountLabel.text = "Score: 0"
         gameScore.text = "Score: 0"
         self.emojiChoice.removeAll()
         self.emoji.removeAll()

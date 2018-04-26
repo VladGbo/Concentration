@@ -108,11 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				901893B2207E474D00A04952 /* Supporting Files */,
+				90552C8A2091A20500B67ACE /* Model */,
 				90189383207E41EA00A04952 /* ViewController.swift */,
-				9032B256208B56DD0045BB24 /* Theme.swift */,
-				90863464208120C4003DCD7B /* Concentration.swift */,
-				90552C87208F92BC00B67ACE /* Score.swift */,
-				908634662082574F003DCD7B /* Card.swift */,
 				90189385207E41EA00A04952 /* Main.storyboard */,
 				90189390207E41EC00A04952 /* Info.plist */,
 				90189388207E41EA00A04952 /* Concetration.xcdatamodeld */,
@@ -146,6 +143,17 @@
 				9018938D207E41EC00A04952 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90552C8A2091A20500B67ACE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9032B256208B56DD0045BB24 /* Theme.swift */,
+				90863464208120C4003DCD7B /* Concentration.swift */,
+				90552C87208F92BC00B67ACE /* Score.swift */,
+				908634662082574F003DCD7B /* Card.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
