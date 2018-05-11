@@ -10,13 +10,13 @@ import Foundation
 struct Card
 {
     
-    static var identifierFactory = 0
+    private static var identifierFactory = 0
     
     var isFaceUp = false
     var isMatched = false
     var identifier: Int
     
-    static func getUniqueIdentififer () -> Int {
+    private static func getUniqueIdentififer () -> Int {
         identifierFactory += 1
         return identifierFactory
     }

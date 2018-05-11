@@ -10,24 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet private var cardButtons: [UIButton]!
     
-    lazy var game = Concentration(numberOfPairsOfCard: (cardButtons.count + 1) / 2)
+    private lazy var game = Concentration(numberOfPairsOfCard: numberOfPairsOfCard)
     
-    var emojiChoice = ["👻", "🎃", "🐛", "🦑", "☃️", "🕷", "🦇", "🐺", "🐍"]
     
-    var emoji = [Int: String]()
+    var numberOfPairsOfCard: Int {
+        return (cardButtons.count + 1) / 2
+    }
     
-    var flipCount = 0 {
+    private var emojiChoice = ["👻", "🎃", "🐛", "🦑", "☃️", "🕷", "🦇", "🐺", "🐍"]
+    
+    private var emoji = [Int: String]()
+    
+    private(set) var flipCount = 0 {
         didSet{
             flipCountLabel.text! = "Flips: \(flipCount)"
         }
     }
     
 
-    @IBAction func touchButton(_ sender: UIButton){
+    @IBAction private func touchButton(_ sender: UIButton){
         if let cardNumber = cardButtons.index(of: sender){
             game.chooseCard(index: cardNumber)
             updateViewFromModel()
@@ -36,7 +41,7 @@ class ViewController: UIViewController {
     }
     
     
-    func updateViewFromModel (){
+    private func updateViewFromModel (){
         for index in cardButtons.indices{
             let card = game.cards[index]
             let button = cardButtons[index]
@@ -51,12 +56,24 @@ class ViewController: UIViewController {
         }
     }
     
-    func emoji (for card: Card) -> String {
+    private func emoji (for card: Card) -> String {
         if emojiChoice.count > 0, emoji[card.identifier] == nil {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoice.count)))
-            emoji[card.identifier] = emojiChoice.remove(at: randomIndex)
+            emoji[card.identifier] = emojiChoice.remove(at: emojiChoice.count.arc4random)
         }
         return emoji[card.identifier] ?? "?"
+    }
+    
+}
+
+extension Int {
+    var arc4random: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
     }
 }
 
