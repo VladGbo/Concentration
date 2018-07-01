@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     private var emojiChoice = ["👻", "🎃", "🐛", "🦑", "☃️", "🕷", "🦇", "🐺", "🐍"]
     
-    private var emoji = [Int: String]()
+    private var emoji = [Card: String]()
     
     private(set) var flipCount = 0 {
         didSet{
@@ -57,10 +57,10 @@ class ViewController: UIViewController {
     }
     
     private func emoji (for card: Card) -> String {
-        if emojiChoice.count > 0, emoji[card.identifier] == nil {
-            emoji[card.identifier] = emojiChoice.remove(at: emojiChoice.count.arc4random)
+        if emojiChoice.count > 0, emoji[card] == nil {
+            emoji[card] = emojiChoice.remove(at: emojiChoice.count.arc4random)
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
     
 }
